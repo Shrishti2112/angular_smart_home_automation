@@ -1,0 +1,36 @@
+<div class="card border-top border-0 border-4 border-primary">
+    <div class="card-body p-5">
+      <div class="card-title d-flex align-items-center">
+        <div><i class="bx bxs-device me-1 font-22 text-primary"></i>
+        </div>
+        <h5 class="mb-0 text-primary">Notifications</h5>
+        <div class="ms-auto"><a href="javascript:;" class="btn btn-primary radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Add New</a></div>
+      </div>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Notification ID</th>
+            <th>Type</th>
+            <th>Message</th>
+            <th>Timestamp</th>
+            <th>User ID</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let notification of notifications">
+            <td>{{ notification.notificationId }}</td>
+            <td>{{ notification.type }}</td>
+            <td>{{ notification.message }}</td>
+            <td>{{ notification.timestamp }}</td>
+            <td>{{ notification.userId }}</td>
+            <td>
+              <!-- <button class="btn btn-primary" (click)="editNotification(notification)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteNotification(notification)">Delete</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

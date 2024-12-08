@@ -1,0 +1,60 @@
+<div class="card border-top border-0 border-4 border-primary">
+    <div class="card-body p-5">
+      <div class="card-title d-flex align-items-center">
+        <div><i class="bx bxs-device me-1 font-22 text-primary"></i>
+        </div>
+        <h5 class="mb-0 text-primary">Add Automation and Scheduling</h5>
+      </div>
+      <hr>
+      <form [formGroup]="automationForm" (ngSubmit)="onSubmit()" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputAutomationId" class="form-label">Automation ID</label>
+          <input type="number" formControlName="automationId" readonly class="form-control">
+          <div *ngIf="automationForm.get('automationId')?.invalid && automationForm.get('automationId')?.touched" class="text-danger">
+            Automation ID is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputDeviceId" class="form-label">Device ID</label>
+          <input type="number" formControlName="deviceId" class="form-control">
+          <div *ngIf="automationForm.get('deviceId')?.invalid && automationForm.get('deviceId')?.touched" class="text-danger">
+            Device ID is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputTriggerEvent" class="form-label">Trigger Event</label>
+          <input type="text" formControlName="triggerEvent" class="form-control">
+          <div *ngIf="automationForm.get('triggerEvent')?.invalid && automationForm.get('triggerEvent')?.touched" class="text-danger">
+            Trigger Event is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputAction" class="form-label">Action</label>
+          <input type="text" formControlName="action" class="form-control">
+          <div *ngIf="automationForm.get('action')?.invalid && automationForm.get('action')?.touched" class="text-danger">
+            Action is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputTimeSchedule" class="form-label">Time Schedule</label>
+          <input type="text" formControlName="timeSchedule" class="form-control">
+          <div *ngIf="automationForm.get('timeSchedule')?.invalid && automationForm.get('timeSchedule')?.touched" class="text-danger">
+            Time Schedule is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputStatus" class="form-label">Status</label>
+          <input type="text" formControlName="status" class="form-control">
+          <div *ngIf="automationForm.get('status')?.invalid && automationForm.get('status')?.touched" class="text-danger">
+            Status is required
+          </div>
+        </div>
+        <div class="col-12">
+          <span style="color: red;">{{errorMessage}}</span>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary px-5">Add Automation and Scheduling</button>
+        </div>
+      </form>
+    </div>
+  </div>

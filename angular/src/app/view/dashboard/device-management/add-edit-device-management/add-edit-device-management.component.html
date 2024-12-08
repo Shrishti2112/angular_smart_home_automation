@@ -1,0 +1,60 @@
+<div class="card border-top border-0 border-4 border-primary">
+    <div class="card-body p-5">
+      <div class="card-title d-flex align-items-center">
+        <div><i class="bx bxs-device me-1 font-22 text-primary"></i>
+        </div>
+        <h5 class="mb-0 text-primary" >Add Device</h5>
+      </div>
+      <hr>
+      <form [formGroup]="deviceForm" (ngSubmit)="onSubmit()" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputDeviceId" class="form-label">Device ID</label>
+          <input type="number" formControlName="deviceId"  class="form-control" readonly>
+          <div *ngIf="deviceForm.get('deviceId')?.invalid && deviceForm.get('deviceId')?.touched" class="text-danger">
+            Device ID is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control">
+          <div *ngIf="deviceForm.get('name')?.invalid && deviceForm.get('name')?.touched" class="text-danger">
+            Name is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputType" class="form-label">Type</label>
+          <input type="text" formControlName="type" class="form-control">
+          <div *ngIf="deviceForm.get('type')?.invalid && deviceForm.get('type')?.touched" class="text-danger">
+            Type is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputLocation" class="form-label">Location</label>
+          <input type="text" formControlName="location" class="form-control">
+          <div *ngIf="deviceForm.get('location')?.invalid && deviceForm.get('location')?.touched" class="text-danger">
+            Location is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputStatus" class="form-label">Status</label>
+          <input type="text" formControlName="status" class="form-control">
+          <div *ngIf="deviceForm.get('status')?.invalid && deviceForm.get('status')?.touched" class="text-danger">
+            Status is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputConfigurationSettings" class="form-label">Configuration Settings</label>
+          <input type="text" formControlName="configurationSettings" class="form-control">
+          <div *ngIf="deviceForm.get('configurationSettings')?.invalid && deviceForm.get('configurationSettings')?.touched" class="text-danger">
+            Configuration Settings is required
+          </div>
+        </div>
+        <div class="col-12">
+          <span style="color: red;">{{errorMessage}}</span>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary px-5">Add Device</button>
+        </div>
+      </form>
+    </div>
+  </div>

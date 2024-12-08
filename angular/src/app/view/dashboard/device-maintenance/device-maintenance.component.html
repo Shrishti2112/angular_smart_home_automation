@@ -1,0 +1,39 @@
+<div class="card border-top border-0 border-4 border-primary">
+    <div class="card-body p-5">
+      <div class="card-title d-flex align-items-center">
+        <div><i class="bx bxs-device me-1 font-22 text-primary"></i>
+        </div>
+        <h5 class="mb-0 text-primary">Energy Maintenance</h5>
+        <div class="ms-auto"><a href="javascript:;" (click)="addNew()" class="btn btn-primary radius-30 mt-2 mt-lg-0"><i class="bx bxs-plus-square"></i>Add New</a></div>
+      </div>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Maintenance ID</th>
+            <th>Device ID</th>
+            <th>Maintenance Type</th>
+            <th>Last Service Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let energyMaintenance of energyMaintenances">
+            <td>{{ energyMaintenance.maintenanceId }}</td>
+            <td>{{ energyMaintenance.deviceId }}</td>
+            <td>{{ energyMaintenance.maintenanceType }}</td>
+            <td>{{ energyMaintenance.lastServiceDate }}</td>
+            <td>{{ energyMaintenance.status }}</td>
+            <td>
+             
+              <div class="d-flex order-actions">
+                <a href="javascript:;" class=""><i class='bx bxs-edit'></i></a>
+                <a href="javascript:;" class="ms-3"><i class='bx bxs-trash'></i></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

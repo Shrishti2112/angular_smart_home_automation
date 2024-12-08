@@ -1,0 +1,53 @@
+<div class="card border-top border-0 border-4 border-primary">
+    <div class="card-body p-5">
+      <div class="card-title d-flex align-items-center">
+        <div><i class="bx bxs-device me-1 font-22 text-primary"></i>
+        </div>
+        <h5 class="mb-0 text-primary">Add Energy Consumption</h5>
+      </div>
+      <hr>
+      <form [formGroup]="energyConsumptionForm" (ngSubmit)="onSubmit()" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputUsageId" class="form-label">Usage ID</label>
+          <input type="number" formControlName="usageId" class="form-control">
+          <div *ngIf="energyConsumptionForm.get('usageId')?.invalid && energyConsumptionForm.get('usageId')?.touched" class="text-danger">
+            Usage ID is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputDeviceId" class="form-label">Device ID</label>
+          <input type="number" formControlName="deviceId" class="form-control">
+          <div *ngIf="energyConsumptionForm.get('deviceId')?.invalid && energyConsumptionForm.get('deviceId')?.touched" class="text-danger">
+            Device ID is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputConsumption" class="form-label">Consumption (kWh)</label>
+          <input type="number" formControlName="consumption" class="form-control">
+          <div *ngIf="energyConsumptionForm.get('consumption')?.invalid && energyConsumptionForm.get('consumption')?.touched" class="text-danger">
+            Consumption is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputTimePeriod" class="form-label">Time Period</label>
+          <input type="text" formControlName="timePeriod" class="form-control">
+          <div *ngIf="energyConsumptionForm.get('timePeriod')?.invalid && energyConsumptionForm.get('timePeriod')?.touched" class="text-danger">
+            Time Period is required
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEnergyCost" class="form-label">Energy Cost ($)</label>
+          <input type="number" formControlName="energyCost" class="form-control">
+          <div *ngIf="energyConsumptionForm.get('energyCost')?.invalid && energyConsumptionForm.get('energyCost')?.touched" class="text-danger">
+            Energy Cost is required
+          </div>
+        </div>
+        <div class="col-12">
+          <span style="color: red;">{{errorMessage}}</span>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary px-5">Add Energy Consumption</button>
+        </div>
+      </form>
+    </div>
+  </div>
